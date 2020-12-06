@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=1" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-mobile.css">
+</head>
+<body>
+    <main>
+        <h1>Password Generator</h1>
+        <div id="input-copy">
+            <input onmouseout="reverseColor()" onmouseover="changeColor()" type="text" id="password" name="password" placeholder="Password will apear here">
+            <button id="copy" onclick="toClipboard()">Copy</button>
+        </div>
+
+        <div id="check-buttons">
+
+            <div class="checkbox">
+                <input type="checkbox" id="check-uppercase" name="check-uppercase">
+                <label for="check-uppercase">Can Include Uppercase</label>
+            </div>
+            
+            <div class="checkbox">
+                <input type="checkbox" id="check-number" name="check-number">
+                <label for="check-number">Can Include Numbers</label>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" id="check-special" name="check-special">
+                <label for="check-special">Can Include Special Characters</label>
+            </div>
+        
+            
+        </div>
+
+        <div id="rangediv">
+            <label for="password-length">Select Password Length</label>
+            <input onchange="displayLength()" step="1" type="range" id="password-length" value="6" name="password-length" min="6" max="12">
+            <span id="password-length-result">6</span>
+            </div>
+
+        <div id="generate">
+            <button id="generate-button" onclick="generatePassword()">Generate</button>
+        </div>
+    </main>
+</body>
+<script src="index.js"></script>
+</html>
